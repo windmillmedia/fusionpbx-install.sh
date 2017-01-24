@@ -73,7 +73,7 @@ if [ $os_check = 'Debian' ]; then
 			cd /usr/src/fusionpbx-install.sh
 			git pull
 		else
-			git clone https://github.com/fusionpbx/fusionpbx-install.sh			
+			git clone https://github.com/windmillmedia/fusionpbx-install.sh			
 		fi
 		cd /usr/src/fusionpbx-install.sh/debian
 		./install.sh $@
