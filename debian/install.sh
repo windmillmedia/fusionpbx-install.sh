@@ -47,7 +47,7 @@ if [ $CPU_CHECK = true ] && [ $USE_SWITCH_SOURCE = false ]; then
 		fi
 		CPU_arch='x86'
 	fi
-	
+
 	if [ $CPU_arch = 'arm' ]; then
 		if [ $OS_bits = '32' ]; then
 			export USE_SWITCH_PACKAGE_UNOFFICIAL_ARM=true
@@ -160,3 +160,6 @@ systemctl restart fail2ban
 
 #add the database schema, user and groups
 resources/finish.sh
+
+#install ejabberd
+resources/ejabberd.sh

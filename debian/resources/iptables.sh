@@ -25,9 +25,17 @@ iptables -A INPUT -p tcp --dport 5060:5061 -j ACCEPT
 iptables -A INPUT -p udp --dport 5060:5061 -j ACCEPT
 iptables -A INPUT -p tcp --dport 5080:5081 -j ACCEPT
 iptables -A INPUT -p udp --dport 5080:5081 -j ACCEPT
-iptables -A INPUT -p udp --dport 16384:32768 -j ACCEPT
+iptables -A INPUT -p udp --dport 5080:5081 -j ACCEPT
 iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A INPUT -p udp --dport 1194 -j ACCEPT
+
+#ejabberd admin
+iptables -A INPUT -p tcp --dport 5280 -j ACCEPT
+#jabber ports
+iptables -A INPUT -p tcp --dport 5222 -j ACCEPT
+iptables -A INPUT -p tcp --dport 5223 -j ACCEPT
+iptables -A INPUT -p tcp --dport 5269 -j ACCEPT
+
 iptables -P INPUT DROP
 iptables -P FORWARD DROP
 iptables -P OUTPUT ACCEPT
