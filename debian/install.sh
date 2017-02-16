@@ -8,6 +8,7 @@ cd "$(dirname "$0")"
 . ./resources/colors.sh
 . ./resources/environment.sh
 
+
 # removes the cd img from the /etc/apt/sources.list file (not needed after base install)
 sed -i '/cdrom:/d' /etc/apt/sources.list
 
@@ -55,3 +56,6 @@ systemctl restart fail2ban
 
 #add the database schema, user and groups
 resources/finish.sh
+
+#install ejabberd
+resources/ejabberd.sh
