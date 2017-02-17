@@ -84,4 +84,3 @@ if [ $os_check = 'Debian' ]; then
 else
 	os_unsupported
 fi
-
