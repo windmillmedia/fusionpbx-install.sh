@@ -404,7 +404,7 @@ max_fsm_queue: 1000
 acl:
   admin:
     user:
-      - "administrator@{hostname}"
+      - "admin@{hostname}"
 
   ##
   ## Blocked users

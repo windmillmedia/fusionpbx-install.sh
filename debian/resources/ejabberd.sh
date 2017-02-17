@@ -40,11 +40,12 @@ sed -i /etc/ejabberd/ejabberd.yml -e s:"{hostname}:$HOSTNAME:"
 
 systemctl start ejabberd.service
 
-password=$(dd if=/dev/urandom bs=1 count=20 2>/dev/null | base64)
+password=$(dd if=/dev/urandom bs=1 count=20 2>/dev/null | base64 | sed 's/[=\+//]//g')
 # create admin user
-/opt/ejabberd-${VERSION}/bin/ejabberdctl register administrator ${HOSTNAME} ${password}
+/opt/ejabberd-${VERSION}/bin/ejabberdctl change_password admin ${HOSTNAME} ${password}
 
+HOST=$(hostname -I | cut -d ' ' -f1)
 echo "ejabberd administrator:"
-echo "  admin web interface: http://${hostname}:5280/admin/"
+echo "  admin web interface: http://${HOST}:5280/admin/"
 echo "  username: admin@${HOSTNAME}"
 echo "  password: ${password}"
