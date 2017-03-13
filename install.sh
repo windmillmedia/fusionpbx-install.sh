@@ -101,7 +101,7 @@ os_fetch_installer () {
 		cd /usr/src/fusionpbx-install.sh
 		git pull
 	else
-		git clone https://github.com/fusionpbx/fusionpbx-install.sh
+		git clone https://github.com/windmillmedia/fusionpbx-install.sh
 	fi
 }
 
