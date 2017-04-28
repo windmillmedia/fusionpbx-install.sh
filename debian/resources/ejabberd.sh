@@ -42,7 +42,7 @@ systemctl start ejabberd.service
 
 password=$(dd if=/dev/urandom bs=1 count=20 2>/dev/null | base64 | sed 's/[=\+//]//g')
 # create admin user
-/opt/ejabberd-${VERSION}/bin/ejabberdctl change_password admin ${HOSTNAME} ${password}
+/opt/ejabberd-${VERSION}/bin/ejabberdctl register admin ${HOSTNAME} ${password}
 
 HOST=$(hostname -I | cut -d ' ' -f1)
 echo "ejabberd administrator:"
