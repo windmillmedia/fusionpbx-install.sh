@@ -1,6 +1,6 @@
 #!/bin/sh
 
-VERSION=17.01
+VERSION=17.04
 EJABBERD_USERNAME=ejabberd
 EJABBERD_DATABASE=ejabberd
 HOSTNAME=$(hostname -f)
